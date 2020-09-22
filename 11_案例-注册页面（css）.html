@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+
+<!--    总结：CSS代码只能在style中使用，包括调用html的body标签。
+        收获：熟悉了各种用法，特别是各种类的调用-->
+<!--    问题：关于用户名这些的上下间距怎么解决-->
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body{
+            background: url("img/1003363.jpg") no-repeat ;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+              padding-top: 25px;
+
+        }
+
+
+            /*白色大边框*/
+        .rg_layout{
+            width: 900px;
+            height: 1130px;
+            border: 8px inset #EEEEEE;
+            background-color: white;
+                /*margin:auto   设置浏览器边距*/
+            margin: auto;
+            margin-top: 15px;
+        }
+
+        .rg_left{
+            /*!*border: 1px solid red;   注释快捷键：ctrl+/  */
+            float: left;
+            margin: 15px;
+        }
+
+        .rg_left > p:first-child{   <!--first-child是一个CSS选择器，作用：选出来的p元素是父元素（rg_left）的第一个元素 -->
+            color: #FFD026;
+            font-size: 20px;  <!--font用于设置字体-->
+        }
+
+        .rg_left > p:last-child{
+            color: #A6A6A6;
+            font-size: 20px;
+        }
+
+
+        .rg_center{
+            /*border: 1px solid red;*/
+            float: left;
+
+            width: 450px;
+        }
+
+
+        .rg_right{
+            /*border: 1px solid red;*/
+            float: right;
+            margin: 15px;
+        }
+
+
+        .rg_right > p:first-child{
+            font-size: 15px;
+        }
+
+
+        .rg_right p a {
+            color: pink;
+        }
+
+        .td_left{
+            width: 100px;
+            text-align: right;   /*右对齐*/
+            height: 45px;   /*用户名等的上下间距*/
+        }
+
+        .td_right{
+            padding: 50px;
+        }
+
+
+        #username,#password,#email,#name,#tel,#birthday,#checkcode{
+            width: 251px;
+            height: 32px;
+            border: 1px solid #A6A6A6;
+        /*    设置圆角边框*/
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+
+        #checkcode{
+            width: 110px;
+        }
+
+
+        #img_check{
+            height: 32px;
+            vertical-align: middle;  /*垂直居中*/
+        }
+
+        #btn_sub{
+            width: 150px;
+            height: 40px;
+            background-color: #FFD026;
+            border: 1px solid #FFD026;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+        <div class="rg_layout">
+            <div class="rg_left">
+                <p>新用户注册</p>
+                <p>USER REGISTER</p>
+            </div>
+
+
+            <div class="rg_center">
+                <div class="rg_form">
+                    <!--定义表单 form-->
+                    <form action="#" method="post">
+                        <table width="500">
+                            <tr>
+                                <td class="td_left"><label for="username">用户名</label></td>
+                                <td class="td_right"><input type="text" name="username" id="username" placeholder="请输入用户名"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="td_left"><label for="password">密码</label></td>
+                                <td class="td_right"><input type="password" name="password" id="password" placeholder="请输入密码"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="td_left"><label for="email">Email</label></td>
+                                <td class="td_right"><input type="email" name="email" id="email" placeholder="请输入Email"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="td_left"><label for="name">姓名</label></td>
+                                <td class="td_right"><input type="text" name="name" id="name" placeholder="请输入姓名"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="td_left"><label for="tel">手机号</label></td>
+                                <td class="td_right"><input type="text" name="tel" id="tel" placeholder="请输入手机号"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="td_left"><label>性别</label></td>
+                                <td class="td_right"><input type="radio" name="gender" value="male"> 男
+                                    <input type="radio" name="gender" value="female" placeholder="请输入性别"> 女
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="td_left"><label for="birthday">出生日期</label></td>
+                                <td class="td_right"><input type="date" name="birthday" id="birthday" placeholder="请输入出生日期"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="td_left"><label for="checkcode">验证码</label></td>
+                                <td class="td_right"><input type="text" name="checkcode" id="checkcode" placeholder="请输入验证码">
+                                    <img id="img_check" src="img/verify_code.jpg" alt="显示不了的图片">
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td colspan="2" align="center"><input type="submit" id="btn_sub" value="注册"></td>        <!--   <td colspan="number">   规定单元格应该横跨的列数 -->
+                            </tr>
+                        </table>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="rg_right">
+                <p>已有账号?<a href="#">立即登录</a></p>
+            </div>
+
+        </div>
+</body>
+</html>
